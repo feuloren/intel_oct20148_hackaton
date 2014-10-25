@@ -1,0 +1,36 @@
+* Room manager
+  Use temperature, light and sound sensors to monitor the room.
+  We can try to turn a light switch with the servo
+  And switch an appliance on/off with the relay
+
+** Selling points
+   Use board full power to run a web server directly on it
+   Send sms (with twillio) or mails
+
+** Potential difficulties
+   May be disconnected from wifi temporarily, we should handle it nicely
+   
+** Actual difficulties
+   > represents shell on my machine
+   $ represents root shell on edison
+   >>> represents python shell on edison
+
+   > screen /dev/ttyUSB0 115200
+   login: root
+   $ configure_edison --wifi
+   Realy easy to use, connect to your network and save the IP address somewhere
+
+   Half-assed python install on the board,
+   Had to install pip with get-pip (find the link again)
+   Then there was a lot of missing files I had to copy from my own system
+   > scp /usr/lib/python2.7/numbers.py root@10.10.25.90:/usr/lib/python2.7/
+   > scp -r /usr/lib/python2.7/unittest/ root@10.10.25.90:/usr/lib/python2.7/
+   > scp /usr/lib/python2.7/difflib.py root@10.10.25.90:/usr/lib/python2.7/
+   
+
+   Then I has to install mraa and upm
+   from their github ( https://github.com/intel-iot-devkit/mraa )
+   $ echo "src mraa-upm http://iotdk.intel.com/repos/1.1/intelgalactic" > /etc/opkg/mraa-upm.conf
+   $ opkg update
+   $ opkg install libmraa0
+   $ opkg install upm
