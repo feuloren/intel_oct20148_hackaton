@@ -1,6 +1,6 @@
 * Room manager
   Use temperature, light and sound sensors to monitor the room.
-  We can try to turn a light switch with the servo
+  We can try to turn a light switch on and off with the servo, we can detect activity with sound sensors and/or hardcoded data to switch the light off automatically if we forgot do turn it off
   And switch an appliance on/off with the relay
 
 ** Selling points
@@ -28,9 +28,13 @@
    > scp /usr/lib/python2.7/difflib.py root@10.10.25.90:/usr/lib/python2.7/
    
 
-   Then I has to install mraa and upm
+   Then I had to install mraa and upm
    from their github ( https://github.com/intel-iot-devkit/mraa )
    $ echo "src mraa-upm http://iotdk.intel.com/repos/1.1/intelgalactic" > /etc/opkg/mraa-upm.conf
    $ opkg update
    $ opkg install libmraa0
    $ opkg install upm
+
+*** How to store data over time
+    SQlite ?
+    See if I can install it on the edison
