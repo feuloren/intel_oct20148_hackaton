@@ -9,7 +9,7 @@ class PhysicalButton():
         
         self.button = mraa.Gpio(pin) # Hope we don't have to debounce...
         self.button.dir(mraa.DIR_IN)
-        self.button.isr(mraa.EDGE_RISING, self.fire_click_callbacks)
+        #self.button.isr(mraa.EDGE_RISING, self.fire_click_callbacks, []) # Crash python...
         
         self.fire_on_click = []
 

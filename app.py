@@ -1,4 +1,6 @@
 #! /usr/bin/env python2
+# -*- coding: utf-8 -*-
+
 import time
 import thread
 import math
@@ -14,9 +16,9 @@ board = configure_board()
 
 @app.route('/')
 def home_route():
-    return render(['p', ['a' {'href' : "/beeps"} "Do some beeps"]],
-                  ['p', ['a' {'href' : "/room_data"} "Display room data"]],
-                  ['p', ['a' {'href' : "/redbutton"} "Red Button !"]])
+    return render(['p', ['a', {'href' : "/beeps"}, "Do some beeps"]],
+                  ['p', ['a', {'href' : "/room_data"}, "Display room data"]],
+                  ['p', ['a', {'href' : "/redbutton"}, "Red Button !"]])
 
 def do_some_beeps(buzz):
     buzz.write(1)

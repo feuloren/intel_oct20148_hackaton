@@ -35,6 +35,8 @@
    $ opkg install libmraa0
    $ opkg install upm
 
+   RNDIS interface disappeared, WTH ?
+
 *** How to store data over time
     SQlite ?
     See if I can install it on the edison
